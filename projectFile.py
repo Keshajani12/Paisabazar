@@ -8,6 +8,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 
+# Get data from csv file
 df = pd.read_csv('dataset-2.csv')
 
 #print(df)
@@ -46,24 +47,33 @@ occ=(df[df.Occupation=='Engineer'])
 occupation=df['Occupation'].value_counts()
 #print(occupation)
 
+# Create a Line plot using Seaborn
 #sns.lineplot(data=midAge,x='Occupation',y='Annual_Income', errorbar=None)
 plt.show()
 
+
+# Create a Bar plot using Seaborn
 #sns.barplot(data=minor,x='Num_Bank_Accounts',y='Num_of_Loan')
 plt.show()
 
+# Create a Line plot using Seaborn
 #sns.lineplot(data=df, x="Month", y="Monthly_Balance", hue="Credit_Score")
 plt.show()
 
+# Create a crosstab report
 #pd.crosstab(df['Occupation'], df['Credit_Score']).plot(kind="bar", figsize=(12,6))
 plt.show()
 
+# Create a Pair plot using Seaborn
 #sns.pairplot(df[['Age','Annual_Income','Monthly_Balance','Credit_Score']], hue="Credit_Score")
 plt.show()
 
+# Create a Violin plot using Seaborn
 #sns.violinplot(data=df, x="Occupation", y="Monthly_Balance")
 plt.show()
 
+
+# Split data into X (Age,Monthly_Balance,Num_Bank_Accounts) and y (Credit_Score)
 le = LabelEncoder()
 df['Credit_Score_encoded'] = le.fit_transform(df['Credit_Score'])
 y = (df['Credit_Score_encoded'])
